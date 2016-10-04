@@ -1,7 +1,10 @@
 # RippleMaster
 [![Release](https://jitpack.io/v/e16din/RippleMaster.svg)](https://jitpack.io/#e16din/RippleMaster)
+[![API](https://img.shields.io/badge/android-15%2B-brightgreen.svg)](https://developer.android.com/about/versions/android-4.0.3.html)
 
-Utils to set and update ripple effect on views.
+Utils to set and update a ripple effect on views.
+
+![Demo](https://github.com/e16din/RippleMaster/blob/master/demo.gif)
 
 ## Usage
 ```java
