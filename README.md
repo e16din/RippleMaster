@@ -3,7 +3,7 @@
 [![API](https://img.shields.io/badge/android-15%2B-brightgreen.svg)](https://developer.android.com/about/versions/android-4.0.3.html)
 
 Utils to set and update a ripple effect on views.
-
+<br/><br/><br/>
 ![Demo](https://github.com/e16din/RippleMaster/blob/master/demo.gif)
 
 ## Usage
