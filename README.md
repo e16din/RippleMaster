@@ -16,6 +16,10 @@ Utils to set and update a ripple effect on views.
 
     //add an oval ripple effect with custom color
     RippleMaster.setRippleBackground(view, Color.GREEN, true);
+
+    //add a ripple effect to several views
+    final int[] layoutIds = {R.id.vOne, R.id.vTwo, R.id.vThree};
+    RippleMaster.setRippleBackground(this, layoutIds);
 ```
 
 ## Download
@@ -31,7 +35,7 @@ Step 1. Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 ```groovy
     dependencies {
-        compile 'com.github.e16din:RippleMaster:1.0.0'
+        compile 'com.github.e16din:RippleMaster:1.0.1'
     }
 ```
 

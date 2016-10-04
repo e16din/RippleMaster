@@ -39,6 +39,49 @@ public final class RippleMaster {
     }
 
 
+    public static void setRippleBackground(@NonNull Activity activity, @IdRes int[] layoutIds) {
+        setRippleBackground(activity, layoutIds, false);
+    }
+
+    public static void setRippleBackground(@NonNull Activity activity, @IdRes int[] layoutIds, @ColorInt int color) {
+        setRippleBackground(activity, layoutIds, color, false);
+    }
+
+    public static void setRippleBackground(@NonNull View[] views) {
+        setRippleBackground(views, false);
+    }
+
+    public static void setRippleBackground(@NonNull View[] views, @ColorInt int rippleColor) {
+        setRippleBackground(views, rippleColor, false);
+    }
+    //
+
+    public static void setRippleBackground(@NonNull Activity activity, @IdRes int[] layoutIds, boolean oval) {
+        for (int id : layoutIds) {
+            final View view = activity.findViewById(id);
+            setRippleEffect(view, getDefaultColor(view), false, oval);
+        }
+    }
+
+    public static void setRippleBackground(@NonNull Activity activity, @IdRes int[] layoutIds, @ColorInt int color, boolean oval) {
+        for (int id : layoutIds) {
+            setRippleEffect(activity.findViewById(id), color, false, oval);
+        }
+    }
+
+    public static void setRippleBackground(@NonNull View[] views, boolean oval) {
+        for (View v : views) {
+            setRippleEffect(v, getDefaultColor(v), false, oval);
+        }
+    }
+
+    public static void setRippleBackground(@NonNull View[] views, @ColorInt int rippleColor, boolean oval) {
+        for (View v : views) {
+            setRippleEffect(v, rippleColor, false, oval);
+        }
+    }
+    //
+
     public static void setRippleBackground(@NonNull Activity activity, @IdRes int layoutId, boolean oval) {
         final View view = activity.findViewById(layoutId);
         setRippleEffect(view, getDefaultColor(view), false, oval);

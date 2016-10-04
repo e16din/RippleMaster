@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="rippleMasterDefaultColor">#29aabbcc</color>
+    <color name="rippleMasterDefaultColor">#333333</color>
 </resources>
