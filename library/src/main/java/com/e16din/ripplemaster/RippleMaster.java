@@ -13,6 +13,7 @@ import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
 
@@ -153,6 +154,7 @@ public final class RippleMaster {
                 drawable = (RippleDrawable) resources.getDrawable(R.drawable.ripple_oval, theme);
 
             } else {
+
                 final int[] selectableAttrs = new int[]{android.R.attr.selectableItemBackground};
 
                 final TypedArray ta = context.obtainStyledAttributes(selectableAttrs);
@@ -168,10 +170,12 @@ public final class RippleMaster {
             } else {
                 view.setBackground(drawable);
             }
-        } else {
+        } else {// if < Lollipop
+
             final Drawable mask = ContextCompat.getDrawable(context, R.drawable.shape_oval);
 
-            Drawable drawable = new codetail.graphics.drawables.RippleDrawable(selector, view.getBackground(),
+            Drawable drawable = new codetail.graphics.drawables.RippleDrawable(selector,
+                    oval ? null : view.getBackground(),
                     oval ? mask : null);
 
             if (foreground) {
@@ -213,7 +217,7 @@ public final class RippleMaster {
         return ContextCompat.getColor(view.getContext(), R.color.rippleMasterDefaultColor);
     }
 
-    private static void setForegroundDrawable(@NonNull View view, @ColorInt Drawable rippleDrawable) {
+    private static void setForegroundDrawable(@NonNull View view, @Nullable @ColorInt Drawable rippleDrawable) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             view.setForeground(rippleDrawable);
         } else {
